@@ -1,16 +1,18 @@
 package br.com.alura.TabelaFipe.model;
 
+
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public record DadosVeiculo(
-		@JsonAlias("TipoVeiculo") Integer tipo, 
-		@JsonAlias("Valor") String valor, 
-		@JsonAlias("Marca") String marca,
 		@JsonAlias("Modelo") String modelo, 
 		@JsonAlias("AnoModelo") Integer ano,
-		@JsonAlias("Combustivel") String combustivel,
+		@JsonAlias("Valor") String valor, 
+		@JsonAlias("Combustivel") String combustivel
+		/*@JsonAlias("Marca") String marca,
+		@JsonAlias("TipoVeiculo") Integer tipo, 
 		@JsonAlias("CodigoFipe") String codigo,
 		@JsonAlias("MesReferencia") String referencia,
-		@JsonAlias("SiglaCombustivel") String sigla) {
+		@JsonAlias("SiglaCombustivel") String sigla*/) {
 }
